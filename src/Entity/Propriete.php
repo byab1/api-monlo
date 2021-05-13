@@ -4,13 +4,27 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\ProprieteRepository;
+use ApiPlatform\Core\Annotation\ApiFilter;
 use Doctrine\Common\Collections\Collection;
+use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\OrderFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\RangeFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 
 /**
  * @ORM\Entity(repositoryClass=ProprieteRepository::class)
+ * @ApiResource(
+ *  attributes={
+ *      "order":{"dateAjout":"desc"}
+ *  },
+ *  normalizationContext={"groups"={"lecture_propriete"}}
+ * )
+ * @ApiFilter(SearchFilter::class, properties={"localisation":"partial", "ville":"partial", "type":"exact"})
+ * @ApiFilter(RangeFilter::class, properties= {"prix"})
+ * @ApiFilter(OrderFilter::class)
  */
 class Propriete
 {
@@ -18,6 +32,7 @@ class Propriete
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups({"lecture_propriete", "lecture_galerie", "lecture_user"})
      */
     private $id;
 
@@ -25,17 +40,20 @@ class Propriete
     /**
      * @ORM\Column(type="string", length=191)
      * @Assert\NotBlank(message="Le nom de la propriété est obligatoire")
+     *  @Groups({"lecture_propriete", "lecture_galerie", "lecture_user"})
      */
     private $nomPropriete;
 
     /**
      * @ORM\Column(type="string", length=191)
      * @Assert\NotBlank(message="La description de la propriété est obligatoire")
+     * @Groups({"lecture_propriete"})
      */
     private $desPropriete;
 
     /**
      * @ORM\Column(type="string", length=191, nullable=true)
+     * @Groups({"lecture_propriete"})
      * 
      */
     private $adrPropriete;
@@ -43,37 +61,44 @@ class Propriete
     /**
      * @ORM\Column(type="string", length=191)
      * @Assert\NotBlank(message="La localisation de la propriété est obligatoire")
+     * @Groups({"lecture_propriete"})
      */
     private $localisation;
 
     /**
      * @ORM\Column(type="string", length=191)
      * @Assert\NotBlank(message="La ville de la propriété est obligatoire")
+     * @Groups({"lecture_propriete", "lecture_galerie", "lecture_user"})
      */
     private $ville;
 
     /**
      * @ORM\Column(type="boolean", nullable=true)
+     * @Groups({"lecture_propriete"})
      */
     private $etat;
 
     /**
      * @ORM\Column(type="string", length=191, nullable=true)
+     * @Groups({"lecture_propriete"})
      */
     private $commune;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
+     * @Groups({"lecture_propriete"})
      */
     private $dateAjout;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
+     * @Groups({"lecture_propriete"})
      */
     private $dateModifPropriete;
 
     /**
      * @ORM\Column(type="string", length=191)
+     * @Groups({"lecture_propriete"})
      */
     private $superficie;
 
@@ -81,27 +106,32 @@ class Propriete
      * @ORM\Column(type="string", length=191)
      * @Assert\NotBlank(message="Le statut de la propriété est obligatoire")
      * @Assert\Choice(choices={"En vente", "Location"}, message="Le statut doit être En vente ou en Location")
+     * @Groups({"lecture_propriete"})
      */
     private $statut;
 
     /**
      * @ORM\Column(type="string", length=191, nullable=true)
+     * @Groups({"lecture_propriete"})
      * 
      */
     private $photoPropriete;
 
     /**
      * @ORM\Column(type="string", length=191, nullable=true)
+     * @Groups({"lecture_propriete"})
      */
     private $video;
 
     /**
      * @ORM\Column(type="string", length=191, nullable=true)
+     * @Groups({"lecture_propriete"})
      */
     private $tourVirtuel;
 
     /**
      * @ORM\Column(type="string", length=191, nullable=true)
+     * @Groups({"lecture_propriete"})
      */
     private $walkscore;
 
@@ -113,42 +143,50 @@ class Propriete
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @Groups({"lecture_propriete"})
      */
     private $vues;
 
 
     /**
      * @ORM\OneToMany(targetEntity=Galerie::class, mappedBy="propriete")
+     * @Groups({"lecture_propriete"})
      */
     private $galeries;
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="proprietes")
+     * @Groups({"lecture_propriete"})
      */
     private $user;
 
     /**
      * @ORM\Column(type="integer")
+     * @Groups({"lecture_propriete"})
      */
     private $nbrPiece;
 
     /**
      * @ORM\Column(type="integer")
+     * @Groups({"lecture_propriete"})
      */
     private $salleEau;
 
     /**
      * @ORM\Column(type="string", length=191, nullable=true)
+     * @Groups({"lecture_propriete"})
      */
     private $piscine;
 
     /**
      * @ORM\Column(type="string", length=191, nullable=true)
+     * @Groups({"lecture_propriete"})
      */
     private $panneauSolaire;
 
     /**
      * @ORM\Column(type="string", length=191, nullable=true)
+     * @Groups({"lecture_propriete"})
      */
     private $garage;
 
@@ -156,17 +194,20 @@ class Propriete
      * @ORM\Column(type="string", length=191)
      * @Assert\NotBlank(message="Le type de propriété est obligatoire")
      * @Assert\Choice(choices={"Villa", "Appartement", "Boutique", "Maison", "Entrepot", "Ferme", "Terrain", "Lavage-auto"}, message="Le type de propriété doit être Villa, Maison...")
+     * @Groups({"lecture_propriete"})
      */
     private $type;
 
     /**
      * @ORM\Column(type="boolean", nullable=true)
+     * @Groups({"lecture_propriete"})
      */
     private $spa;
 
     /**
      * @ORM\Column(type="integer")
      * @Assert\NotBlank(message="Le type de propriété est obligatoire")
+     * @Groups({"lecture_propriete", "lecture_galerie", "lecture_user"})
      */
     private $prix;
 

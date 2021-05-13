@@ -4,6 +4,7 @@ namespace App\DataFixtures;
 
 use Faker\Factory;
 use App\Entity\User;
+use App\Entity\Facture;
 use App\Entity\Galerie;
 use App\Entity\Package;
 use App\Entity\Propriete;
@@ -58,6 +59,8 @@ class AppFixtures extends Fixture
                 $hash = $this->encoder->encodePassword($user, "password");
                 $logo = $faker->imageUrl(640, 480);
 
+                $numFacture = 1;
+
                 $user->setNom($faker->firstName())
                     ->setPrenom($faker->lastName())
                     ->setEmail($faker->email)
@@ -68,11 +71,11 @@ class AppFixtures extends Fixture
                     ->setEtat(1)
                     ->setCote($faker->numberBetween(2, 5))
                     ->setDateCreation($faker->dateTimeBetween('-6 months'))
-                    ->setPackage($package)
+                    ->setTypePackage($typePackage)
                     ->setPassword($hash);
 
                 $manager->persist($user);
-                
+
                 //     //Création des propriétés
                 for ($k = 1; $k < mt_rand(5, 10); $k++) {
                     $propriete = new Propriete();
@@ -113,6 +116,20 @@ class AppFixtures extends Fixture
                             ->setPropriete($propriete);
 
                         $manager->persist($galerie);
+                    }
+
+                    //Création des factures pour les users
+                    for ($j = 0; $j < mt_rand(1, 3); $j++) {
+                        $facture = new Facture();
+
+                        $facture->setMontantFacture($faker->randomFloat(2, 100000, 60000000))
+                            ->setNumFacture($numFacture)
+                            ->setUser($user)
+                            ->setStatutFacture($faker->randomElement(['SENT', 'PAID', 'CANCELLED']))
+                            ->setEnvoyeLe($faker->dateTimeBetween('-2 months'));
+
+                        $numFacture++;
+                        $manager->persist($facture);
                     }
                 }
             }

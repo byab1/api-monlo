@@ -5,14 +5,24 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\UserRepository;
 use Doctrine\Common\Collections\Collection;
-use Doctrine\Common\Collections\ArrayCollection;
 use phpDocumentor\Reflection\Types\Boolean;
-use Symfony\Component\Security\Core\User\UserInterface;
+use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Core\Annotation\ApiSubresource;
+use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
+ * @ApiResource(
+ *  @UniqueEntity(
+ * fields={"email"},
+ * message="Un utilisateur possède déjà cette adresse, veuillez la modifier !")
+ * normalizationContext={"groups"={"lecture_user"}}
+ * )
  */
 class User implements UserInterface
 {
@@ -20,76 +30,95 @@ class User implements UserInterface
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups({"lecture_user", "lecture_propriete", "lecture_facture"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
+     * @Groups({"lecture_user", "lecture_propriete", "lecture_facture"})
+     * @Assert\NotBlank(message="L'email de l'utilisateur est obligatoire")
+     * @Assert\Email(message="Le format de l'adresse email doit etre valide")
      */
     private $email;
     /**
      * @ORM\Column(type="string", length=191)
      * @Assert\NotBlank(message="Le nom de l'utilisateur est obligatoire")
+     * @Assert\Length(min=3, minMessage="Le nom de l'utilisateur doit avoir au moins 3 caractères", max=100, maxMessage="Le nom de l'utilsateur ne doit pas depasser 100 caractères")
+     * @Groups({"lecture_user", "lecture_propriete", "lecture_facture"})
      */
     private $nom;
 
     /**
      * @ORM\Column(type="string", length=191)
      * @Assert\NotBlank(message="Le prénom de l'utilisateur est obligatoire")
+     * @Assert\Length(min=3, minMessage="Le prénom  de l'utilisateur doit avoir au moins 3 caractères", max=100, maxMessage="Le prénom  de l'utilsateur ne doit pas depasser 100 caractères")
+     * 
+     * @Groups({"lecture_user", "lecture_propriete", "lecture_facture"})
      */
     private $prenom;
 
     /**
      * @ORM\Column(type="string", length=191)
      * @Assert\NotBlank(message="L'adresse de l'utilisateur est obligatoire")
+     * @Groups({"lecture_user"})
      */
     private $adresse;
 
     /**
      * @ORM\Column(type="string", length=191)
      * @Assert\NotBlank(message="Le numéro de téléphone est obligatoire")
+     * @Groups({"lecture_user", "lecture_propriete", "lecture_facture"})
      */
     private $telephone;
 
     /**
      * @ORM\Column(type="string", length=191)
      * @Assert\NotBlank(message="Le logo de l'utilisateur est obligatoire")
+     * @Groups({"lecture_user"})
      */
     private $logo;
 
     /**
-     * @ORM\Column(type="integer", length=191)
+     * @ORM\Column(type="integer", nullable=true, length=191)
+     * @Groups({"lecture_user"})
      */
     private $cote;
 
     /**
      * @ORM\Column(type="string", length=191)
      * @Assert\NotBlank(message="L'accredidtation est obligatoire")
+     * @Groups({"lecture_user"})
      */
     private $accreditation;
 
     /**
      * @ORM\Column(type="boolean", nullable=true)
+     * @Groups({"lecture_user"})
      */
     private $etat;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
+     * @Groups({"lecture_user"})
      */
     private $dateCreation;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
+     * @Groups({"lecture_user"})
      */
     private $dateModification;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
+     * @Groups({"lecture_user"})
      */
     private $dateSuppression;
 
     /**
      * @ORM\OneToMany(targetEntity=Propriete::class, mappedBy="user")
+     * @Groups({"lecture_user"})
      */
     private $proprietes;
 
@@ -106,14 +135,47 @@ class User implements UserInterface
     private $password;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Package::class, inversedBy="users")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\OneToMany(targetEntity=Facture::class, mappedBy="user")
+     * @Groups({"lecture_user"})
+     * @ApiSubresource
      */
-    private $package;
+    private $facture;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=TypePackage::class, inversedBy="users")
+     */
+    private $typePackage;
+
+    /**
+     * Undocumented function
+     * @Groups({"lecture_user"})
+     * @return float
+     */
+    public function getTotalAmount(): float
+    {
+        return array_reduce($this->facture->toArray(), function ($total, $facture) {
+            return $total + $facture->getMontantFacture();
+        }, 0);
+    }
+
+    /**
+     * Undocumented function
+     * @Groups({"lecture_user"})
+     * @return float
+     */
+    public function getTotalUnpaidAmount(): float
+    {
+        return array_reduce($this->facture->toArray(), function ($total, $facture) {
+            return $total + ($facture->getStatutFacture() === "PAID"  || $facture->getStatutFacture() === "CANCELLED" ? 0 :
+                $facture->getMontantFacture());
+        }, 0);
+    }
+
 
     public function __construct()
     {
         $this->proprietes = new ArrayCollection();
+        $this->facture = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -352,14 +414,44 @@ class User implements UserInterface
         // $this->plainPassword = null;
     }
 
-    public function getPackage(): ?Package
+    /**
+     * @return Collection|Facture[]
+     */
+    public function getFacture(): Collection
     {
-        return $this->package;
+        return $this->facture;
     }
 
-    public function setPackage(?Package $package): self
+    public function addFacture(Facture $facture): self
     {
-        $this->package = $package;
+        if (!$this->facture->contains($facture)) {
+            $this->facture[] = $facture;
+            $facture->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeFacture(Facture $facture): self
+    {
+        if ($this->facture->removeElement($facture)) {
+            // set the owning side to null (unless already changed)
+            if ($facture->getUser() === $this) {
+                $facture->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getTypePackage(): ?TypePackage
+    {
+        return $this->typePackage;
+    }
+
+    public function setTypePackage(?TypePackage $typePackage): self
+    {
+        $this->typePackage = $typePackage;
 
         return $this;
     }

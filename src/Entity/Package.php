@@ -5,10 +5,18 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\PackageRepository;
 use Doctrine\Common\Collections\Collection;
+use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ORM\Entity(repositoryClass=PackageRepository::class)
+ * @ApiResource(
+ * normalizationContext={"groups"={"lecture_package"}}
+ * )
  */
 class Package
 {
@@ -16,57 +24,66 @@ class Package
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups({"lecture_package", "lecture_typepackage"})
      */
     private $id;
     /**
      * @ORM\Column(type="string", length=191)
+     * @Groups({"lecture_package", "lecture_typepackage"})
+     * @Assert\NotBlank(message="Le nom du package est obligatoire")
+     * 
      */
     private $nomPackage;
 
     /**
      * @ORM\Column(type="float")
+     * @Groups({"lecture_package", "lecture_typepackage"})
+     * @Assert\NotBlank(message="Le prix du package est obligatoire")
      */
     private $prixPackage;
 
     /**
      * @ORM\Column(type="datetime")
+     * @Groups({"lecture_package", "lecture_typepackage"})
+     * @Assert\NotBlank(message="La date d'expiration du package est obligatoire")
      */
     private $dateExpiration;
 
     /**
      * @ORM\Column(type="integer")
+     * @Groups({"lecture_package", "lecture_typepackage"})
+     * @Assert\NotBlank(message="Le nombre de proprieté du package est obligatoire")
      */
     private $nbrPropriete;
 
     /**
      * @ORM\Column(type="integer")
+     * @Groups({"lecture_package", "lecture_typepackage"})
+     * 
      */
     private $nbVedetProp;
 
     /**
      * @ORM\Column(type="string", length=191)
+     * @Groups({"lecture_package", "lecture_typepackage"})
+     * @Assert\NotBlank(message="La description du package est obligatoire")
      */
     private $desProp;
 
     /**
      * @ORM\Column(type="boolean")
+     * @Groups({"lecture_package", "lecture_typepackage"})
+     * @Assert\NotBlank(message="Ce champs est obligatoire")
      */
     private $etat;
 
     /**
      * @ORM\ManyToOne(targetEntity=TypePackage::class, inversedBy="package")
+     * @Groups({"lecture_package"})
+     * @Assert\NotBlank(message="Veuillez selectionnez le type de package")
      */
     private $typePackage;
 
-    /**
-     * @ORM\OneToMany(targetEntity=User::class, mappedBy="package")
-     */
-    private $users;
-
-    public function __construct()
-    {
-        $this->users = new ArrayCollection();
-    }
 
 
     public function getId(): ?int
@@ -168,35 +185,4 @@ class Package
 
         return $this;
     }
-
-    /**
-     * @return Collection|User[]
-     */
-    public function getUsers(): Collection
-    {
-        return $this->users;
-    }
-
-    public function addUser(User $user): self
-    {
-        if (!$this->users->contains($user)) {
-            $this->users[] = $user;
-            $user->setPackage($this);
-        }
-
-        return $this;
-    }
-
-    public function removeUser(User $user): self
-    {
-        if ($this->users->removeElement($user)) {
-            // set the owning side to null (unless already changed)
-            if ($user->getPackage() === $this) {
-                $user->setPackage(null);
-            }
-        }
-
-        return $this;
-    }
-
 }
