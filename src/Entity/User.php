@@ -18,9 +18,6 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
  * @ApiResource(
- *  @UniqueEntity(
- * fields={"email"},
- * message="Un utilisateur possède déjà cette adresse, veuillez la modifier !")
  * normalizationContext={"groups"={"lecture_user"}}
  * )
  */
