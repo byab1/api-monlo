@@ -161,13 +161,13 @@ class Propriete
     private $user;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", nullable=true)
      * @Groups({"lecture_propriete"})
      */
     private $nbrPiece;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", nullable=true)
      * @Groups({"lecture_propriete"})
      */
     private $salleEau;

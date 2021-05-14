@@ -2,9 +2,10 @@
 
 namespace App\Repository;
 
+use App\Entity\User;
 use App\Entity\Facture;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 /**
  * @method Facture|null find($id, $lockMode = null, $lockVersion = null)
@@ -17,6 +18,18 @@ class FactureRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Facture::class);
+    }
+
+    //Obtenir le dernier chrono des factures d'un utilisateur
+    public function getNextChrono(User $user)
+    {
+        return $this->createQueryBuilder("i")
+            ->select("i.numFacture")
+            ->join("i.user", "u")
+            ->orderBy("i.numFacture", "DESC")
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getSingleScalarResult() + 1;
     }
 
     // /**
