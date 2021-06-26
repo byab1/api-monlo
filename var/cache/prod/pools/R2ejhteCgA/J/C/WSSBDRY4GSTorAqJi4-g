@@ -1,0 +1,203 @@
+<?php //App.Entity.Facture
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        (($f = &\Symfony\Component\VarExporter\Internal\Registry::$factories)['Symfony\\Component\\Validator\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::f('Symfony\\Component\\Validator\\Mapping\\ClassMetadata'))(),
+        ($f['Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::f('Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'))(),
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Symfony\\Component\\Validator\\Constraints\\NotBlank'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Validator\\Constraints\\NotBlank')),
+        clone ($p['Symfony\\Component\\Validator\\Constraints\\Type'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Validator\\Constraints\\Type')),
+        $f['Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'](),
+        clone $p['Symfony\\Component\\Validator\\Constraints\\NotBlank'],
+        clone $p['Symfony\\Component\\Validator\\Constraints\\Type'],
+        $f['Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'](),
+        clone $p['Symfony\\Component\\Validator\\Constraints\\NotBlank'],
+        clone ($p['Symfony\\Component\\Validator\\Constraints\\Choice'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Validator\\Constraints\\Choice')),
+        $f['Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'](),
+        clone $p['Symfony\\Component\\Validator\\Constraints\\NotBlank'],
+        $f['Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'](),
+        clone $p['Symfony\\Component\\Validator\\Constraints\\NotBlank'],
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\Facture',
+                'montantFacture',
+                4 => 'numFacture',
+                7 => 'statutFacture',
+                10 => 'envoyeLe',
+                12 => 'user',
+            ],
+            'defaultGroup' => [
+                'Facture',
+            ],
+            'members' => [
+                [
+                    'montantFacture' => [
+                        $o[1],
+                    ],
+                    'numFacture' => [
+                        $o[4],
+                    ],
+                    'statutFacture' => [
+                        $o[7],
+                    ],
+                    'envoyeLe' => [
+                        $o[10],
+                    ],
+                    'user' => [
+                        $o[12],
+                    ],
+                ],
+            ],
+            'properties' => [
+                [
+                    'montantFacture' => $o[1],
+                    'numFacture' => $o[4],
+                    'statutFacture' => $o[7],
+                    'envoyeLe' => $o[10],
+                    'user' => $o[12],
+                ],
+            ],
+            'class' => [
+                1 => 'App\\Entity\\Facture',
+                4 => 'App\\Entity\\Facture',
+                7 => 'App\\Entity\\Facture',
+                10 => 'App\\Entity\\Facture',
+                12 => 'App\\Entity\\Facture',
+            ],
+            'property' => [
+                1 => 'montantFacture',
+                4 => 'numFacture',
+                7 => 'statutFacture',
+                10 => 'envoyeLe',
+                12 => 'user',
+            ],
+            'constraints' => [
+                1 => [
+                    $o[2],
+                    $o[3],
+                ],
+                4 => [
+                    $o[5],
+                    $o[6],
+                ],
+                7 => [
+                    $o[8],
+                    $o[9],
+                ],
+                10 => [
+                    $o[11],
+                ],
+                12 => [
+                    $o[13],
+                ],
+            ],
+            'constraintsByGroup' => [
+                1 => [
+                    'Default' => [
+                        $o[2],
+                        $o[3],
+                    ],
+                    'Facture' => [
+                        $o[2],
+                        $o[3],
+                    ],
+                ],
+                4 => [
+                    'Default' => [
+                        $o[5],
+                        $o[6],
+                    ],
+                    'Facture' => [
+                        $o[5],
+                        $o[6],
+                    ],
+                ],
+                7 => [
+                    'Default' => [
+                        $o[8],
+                        $o[9],
+                    ],
+                    'Facture' => [
+                        $o[8],
+                        $o[9],
+                    ],
+                ],
+                10 => [
+                    'Default' => [
+                        $o[11],
+                    ],
+                    'Facture' => [
+                        $o[11],
+                    ],
+                ],
+                12 => [
+                    'Default' => [
+                        $o[13],
+                    ],
+                    'Facture' => [
+                        $o[13],
+                    ],
+                ],
+            ],
+            'message' => [
+                2 => 'Le montant de la facture est obligatoire',
+                'Le montant de la facture doit être numérique',
+                5 => 'Le numéro de la facture est obligatoire',
+                'Le numéro de la facture doit être un nombre',
+                8 => 'Le statut de la facture est obligatoire',
+                'Le statut doit être SENT, PAID ou CANCELLED',
+                11 => 'La date d\'envoie de la facture est obligatoire',
+                13 => 'La facture doit avoir un utilisateur',
+            ],
+            'groups' => [
+                2 => [
+                    'Default',
+                    'Facture',
+                ],
+                [
+                    'Default',
+                    'Facture',
+                ],
+                5 => [
+                    'Default',
+                    'Facture',
+                ],
+                [
+                    'Default',
+                    'Facture',
+                ],
+                8 => [
+                    'Default',
+                    'Facture',
+                ],
+                [
+                    'Default',
+                    'Facture',
+                ],
+                11 => [
+                    'Default',
+                    'Facture',
+                ],
+                13 => [
+                    'Default',
+                    'Facture',
+                ],
+            ],
+            'type' => [
+                3 => 'numeric',
+                6 => 'integer',
+            ],
+            'choices' => [
+                9 => [
+                    'SENT',
+                    'PAID',
+                    'CANCELLED',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

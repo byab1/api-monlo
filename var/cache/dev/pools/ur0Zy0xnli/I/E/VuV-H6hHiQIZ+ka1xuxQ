@@ -1,0 +1,46 @@
+<?php //property_name_collection_296532dc83c6d7fb1bfbd21fd72eafa7
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['ApiPlatform\\Core\\Metadata\\Property\\PropertyNameCollection'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('ApiPlatform\\Core\\Metadata\\Property\\PropertyNameCollection')),
+    ],
+    null,
+    [
+        'ApiPlatform\\Core\\Metadata\\Property\\PropertyNameCollection' => [
+            'properties' => [
+                [
+                    'id',
+                    'nomPropriete',
+                    'desPropriete',
+                    'adrPropriete',
+                    'localisation',
+                    'ville',
+                    'etat',
+                    'commune',
+                    'dateAjout',
+                    'dateModifPropriete',
+                    'superficie',
+                    'statut',
+                    'photoPropriete',
+                    'video',
+                    'tourVirtuel',
+                    'walkscore',
+                    'requete',
+                    'vues',
+                    'galeries',
+                    'user',
+                    'nbrPiece',
+                    'salleEau',
+                    'piscine',
+                    'panneauSolaire',
+                    'garage',
+                    'type',
+                    'spa',
+                    'prix',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

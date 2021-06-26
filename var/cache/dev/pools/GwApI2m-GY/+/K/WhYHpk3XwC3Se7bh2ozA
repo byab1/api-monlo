@@ -1,0 +1,50 @@
+<?php //App_Entity_Galerie
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Symfony\\Component\\Serializer\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Serializer\\Mapping\\ClassMetadata')),
+        clone ($p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata')),
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\Galerie',
+                'id',
+                'url',
+                'caption',
+                'propriete',
+            ],
+            'attributesMetadata' => [
+                [
+                    'id' => $o[1],
+                    'url' => $o[2],
+                    'caption' => $o[3],
+                    'propriete' => $o[4],
+                ],
+            ],
+            'groups' => [
+                1 => [
+                    'lecture_galerie',
+                    'lecture_propriete',
+                ],
+                [
+                    'lecture_galerie',
+                    'lecture_propriete',
+                ],
+                [
+                    'lecture_galerie',
+                    'lecture_propriete',
+                ],
+                [
+                    'lecture_galerie',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

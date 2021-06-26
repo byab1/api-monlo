@@ -1,0 +1,215 @@
+<?php //App.Entity.Package
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        (($f = &\Symfony\Component\VarExporter\Internal\Registry::$factories)['Symfony\\Component\\Validator\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::f('Symfony\\Component\\Validator\\Mapping\\ClassMetadata'))(),
+        ($f['Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::f('Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'))(),
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Symfony\\Component\\Validator\\Constraints\\NotBlank'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Validator\\Constraints\\NotBlank')),
+        $f['Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'](),
+        clone $p['Symfony\\Component\\Validator\\Constraints\\NotBlank'],
+        $f['Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'](),
+        clone $p['Symfony\\Component\\Validator\\Constraints\\NotBlank'],
+        $f['Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'](),
+        clone $p['Symfony\\Component\\Validator\\Constraints\\NotBlank'],
+        $f['Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'](),
+        clone $p['Symfony\\Component\\Validator\\Constraints\\NotBlank'],
+        $f['Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'](),
+        clone $p['Symfony\\Component\\Validator\\Constraints\\NotBlank'],
+        $f['Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'](),
+        clone $p['Symfony\\Component\\Validator\\Constraints\\NotBlank'],
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\Package',
+                'nomPackage',
+                3 => 'prixPackage',
+                5 => 'dateExpiration',
+                7 => 'nbrPropriete',
+                9 => 'desProp',
+                11 => 'etat',
+                13 => 'typePackage',
+            ],
+            'defaultGroup' => [
+                'Package',
+            ],
+            'members' => [
+                [
+                    'nomPackage' => [
+                        $o[1],
+                    ],
+                    'prixPackage' => [
+                        $o[3],
+                    ],
+                    'dateExpiration' => [
+                        $o[5],
+                    ],
+                    'nbrPropriete' => [
+                        $o[7],
+                    ],
+                    'desProp' => [
+                        $o[9],
+                    ],
+                    'etat' => [
+                        $o[11],
+                    ],
+                    'typePackage' => [
+                        $o[13],
+                    ],
+                ],
+            ],
+            'properties' => [
+                [
+                    'nomPackage' => $o[1],
+                    'prixPackage' => $o[3],
+                    'dateExpiration' => $o[5],
+                    'nbrPropriete' => $o[7],
+                    'desProp' => $o[9],
+                    'etat' => $o[11],
+                    'typePackage' => $o[13],
+                ],
+            ],
+            'class' => [
+                1 => 'App\\Entity\\Package',
+                3 => 'App\\Entity\\Package',
+                5 => 'App\\Entity\\Package',
+                7 => 'App\\Entity\\Package',
+                9 => 'App\\Entity\\Package',
+                11 => 'App\\Entity\\Package',
+                13 => 'App\\Entity\\Package',
+            ],
+            'property' => [
+                1 => 'nomPackage',
+                3 => 'prixPackage',
+                5 => 'dateExpiration',
+                7 => 'nbrPropriete',
+                9 => 'desProp',
+                11 => 'etat',
+                13 => 'typePackage',
+            ],
+            'constraints' => [
+                1 => [
+                    $o[2],
+                ],
+                3 => [
+                    $o[4],
+                ],
+                5 => [
+                    $o[6],
+                ],
+                7 => [
+                    $o[8],
+                ],
+                9 => [
+                    $o[10],
+                ],
+                11 => [
+                    $o[12],
+                ],
+                13 => [
+                    $o[14],
+                ],
+            ],
+            'constraintsByGroup' => [
+                1 => [
+                    'Default' => [
+                        $o[2],
+                    ],
+                    'Package' => [
+                        $o[2],
+                    ],
+                ],
+                3 => [
+                    'Default' => [
+                        $o[4],
+                    ],
+                    'Package' => [
+                        $o[4],
+                    ],
+                ],
+                5 => [
+                    'Default' => [
+                        $o[6],
+                    ],
+                    'Package' => [
+                        $o[6],
+                    ],
+                ],
+                7 => [
+                    'Default' => [
+                        $o[8],
+                    ],
+                    'Package' => [
+                        $o[8],
+                    ],
+                ],
+                9 => [
+                    'Default' => [
+                        $o[10],
+                    ],
+                    'Package' => [
+                        $o[10],
+                    ],
+                ],
+                11 => [
+                    'Default' => [
+                        $o[12],
+                    ],
+                    'Package' => [
+                        $o[12],
+                    ],
+                ],
+                13 => [
+                    'Default' => [
+                        $o[14],
+                    ],
+                    'Package' => [
+                        $o[14],
+                    ],
+                ],
+            ],
+            'message' => [
+                2 => 'Le nom du package est obligatoire',
+                4 => 'Le prix du package est obligatoire',
+                6 => 'La date d\'expiration du package est obligatoire',
+                8 => 'Le nombre de proprieté du package est obligatoire',
+                10 => 'La description du package est obligatoire',
+                12 => 'Ce champs est obligatoire',
+                14 => 'Veuillez selectionnez le type de package',
+            ],
+            'groups' => [
+                2 => [
+                    'Default',
+                    'Package',
+                ],
+                4 => [
+                    'Default',
+                    'Package',
+                ],
+                6 => [
+                    'Default',
+                    'Package',
+                ],
+                8 => [
+                    'Default',
+                    'Package',
+                ],
+                10 => [
+                    'Default',
+                    'Package',
+                ],
+                12 => [
+                    'Default',
+                    'Package',
+                ],
+                14 => [
+                    'Default',
+                    'Package',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

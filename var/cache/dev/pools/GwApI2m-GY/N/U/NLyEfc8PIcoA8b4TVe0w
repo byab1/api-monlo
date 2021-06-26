@@ -1,0 +1,80 @@
+<?php //App_Entity_Facture
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Symfony\\Component\\Serializer\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Serializer\\Mapping\\ClassMetadata')),
+        clone ($p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata')),
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\Facture',
+                'id',
+                'montantFacture',
+                'numFacture',
+                'apercu',
+                'statutFacture',
+                'envoyeLe',
+                'modifieLe',
+                'supprimerLe',
+                'user',
+            ],
+            'attributesMetadata' => [
+                [
+                    'id' => $o[1],
+                    'montantFacture' => $o[2],
+                    'numFacture' => $o[3],
+                    'apercu' => $o[4],
+                    'statutFacture' => $o[5],
+                    'envoyeLe' => $o[6],
+                    'modifieLe' => $o[7],
+                    'supprimerLe' => $o[8],
+                    'user' => $o[9],
+                ],
+            ],
+            'groups' => [
+                1 => [
+                    'lecture_facture',
+                    'lecture_user',
+                ],
+                [
+                    'lecture_facture',
+                    'lecture_user',
+                ],
+                [
+                    'lecture_facture',
+                    'lecture_user',
+                ],
+                [
+                    'lecture_facture',
+                ],
+                [
+                    'lecture_facture',
+                ],
+                [
+                    'lecture_facture',
+                ],
+                [
+                    'lecture_facture',
+                ],
+                [
+                    'lecture_facture',
+                ],
+                [
+                    'lecture_facture',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

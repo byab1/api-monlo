@@ -1,0 +1,256 @@
+<?php //App.Entity.User
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        (($f = &\Symfony\Component\VarExporter\Internal\Registry::$factories)['Symfony\\Component\\Validator\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::f('Symfony\\Component\\Validator\\Mapping\\ClassMetadata'))(),
+        ($f['Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::f('Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'))(),
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Symfony\\Component\\Validator\\Constraints\\NotBlank'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Validator\\Constraints\\NotBlank')),
+        clone ($p['Symfony\\Component\\Validator\\Constraints\\Email'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Validator\\Constraints\\Email')),
+        $f['Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'](),
+        clone $p['Symfony\\Component\\Validator\\Constraints\\NotBlank'],
+        clone ($p['Symfony\\Component\\Validator\\Constraints\\Length'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Validator\\Constraints\\Length')),
+        $f['Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'](),
+        clone $p['Symfony\\Component\\Validator\\Constraints\\NotBlank'],
+        clone $p['Symfony\\Component\\Validator\\Constraints\\Length'],
+        $f['Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'](),
+        clone $p['Symfony\\Component\\Validator\\Constraints\\NotBlank'],
+        $f['Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'](),
+        clone $p['Symfony\\Component\\Validator\\Constraints\\NotBlank'],
+        $f['Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'](),
+        clone $p['Symfony\\Component\\Validator\\Constraints\\NotBlank'],
+        $f['Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'](),
+        clone $p['Symfony\\Component\\Validator\\Constraints\\NotBlank'],
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\User',
+                'email',
+                4 => 'nom',
+                7 => 'prenom',
+                10 => 'adresse',
+                12 => 'telephone',
+                14 => 'logo',
+                16 => 'accreditation',
+            ],
+            'defaultGroup' => [
+                'User',
+            ],
+            'members' => [
+                [
+                    'email' => [
+                        $o[1],
+                    ],
+                    'nom' => [
+                        $o[4],
+                    ],
+                    'prenom' => [
+                        $o[7],
+                    ],
+                    'adresse' => [
+                        $o[10],
+                    ],
+                    'telephone' => [
+                        $o[12],
+                    ],
+                    'logo' => [
+                        $o[14],
+                    ],
+                    'accreditation' => [
+                        $o[16],
+                    ],
+                ],
+            ],
+            'properties' => [
+                [
+                    'email' => $o[1],
+                    'nom' => $o[4],
+                    'prenom' => $o[7],
+                    'adresse' => $o[10],
+                    'telephone' => $o[12],
+                    'logo' => $o[14],
+                    'accreditation' => $o[16],
+                ],
+            ],
+            'class' => [
+                1 => 'App\\Entity\\User',
+                4 => 'App\\Entity\\User',
+                7 => 'App\\Entity\\User',
+                10 => 'App\\Entity\\User',
+                12 => 'App\\Entity\\User',
+                14 => 'App\\Entity\\User',
+                16 => 'App\\Entity\\User',
+            ],
+            'property' => [
+                1 => 'email',
+                4 => 'nom',
+                7 => 'prenom',
+                10 => 'adresse',
+                12 => 'telephone',
+                14 => 'logo',
+                16 => 'accreditation',
+            ],
+            'constraints' => [
+                1 => [
+                    $o[2],
+                    $o[3],
+                ],
+                4 => [
+                    $o[5],
+                    $o[6],
+                ],
+                7 => [
+                    $o[8],
+                    $o[9],
+                ],
+                10 => [
+                    $o[11],
+                ],
+                12 => [
+                    $o[13],
+                ],
+                14 => [
+                    $o[15],
+                ],
+                16 => [
+                    $o[17],
+                ],
+            ],
+            'constraintsByGroup' => [
+                1 => [
+                    'Default' => [
+                        $o[2],
+                        $o[3],
+                    ],
+                    'User' => [
+                        $o[2],
+                        $o[3],
+                    ],
+                ],
+                4 => [
+                    'Default' => [
+                        $o[5],
+                        $o[6],
+                    ],
+                    'User' => [
+                        $o[5],
+                        $o[6],
+                    ],
+                ],
+                7 => [
+                    'Default' => [
+                        $o[8],
+                        $o[9],
+                    ],
+                    'User' => [
+                        $o[8],
+                        $o[9],
+                    ],
+                ],
+                10 => [
+                    'Default' => [
+                        $o[11],
+                    ],
+                    'User' => [
+                        $o[11],
+                    ],
+                ],
+                12 => [
+                    'Default' => [
+                        $o[13],
+                    ],
+                    'User' => [
+                        $o[13],
+                    ],
+                ],
+                14 => [
+                    'Default' => [
+                        $o[15],
+                    ],
+                    'User' => [
+                        $o[15],
+                    ],
+                ],
+                16 => [
+                    'Default' => [
+                        $o[17],
+                    ],
+                    'User' => [
+                        $o[17],
+                    ],
+                ],
+            ],
+            'message' => [
+                2 => 'L\'email de l\'utilisateur est obligatoire',
+                'Le format de l\'adresse email doit etre valide',
+                5 => 'Le nom de l\'utilisateur est obligatoire',
+                8 => 'Le prénom de l\'utilisateur est obligatoire',
+                11 => 'L\'adresse de l\'utilisateur est obligatoire',
+                13 => 'Le numéro de téléphone est obligatoire',
+                15 => 'Le logo de l\'utilisateur est obligatoire',
+                17 => 'L\'accredidtation est obligatoire',
+            ],
+            'groups' => [
+                2 => [
+                    'Default',
+                    'User',
+                ],
+                [
+                    'Default',
+                    'User',
+                ],
+                5 => [
+                    'Default',
+                    'User',
+                ],
+                [
+                    'Default',
+                    'User',
+                ],
+                8 => [
+                    'Default',
+                    'User',
+                ],
+                [
+                    'Default',
+                    'User',
+                ],
+                11 => [
+                    'Default',
+                    'User',
+                ],
+                13 => [
+                    'Default',
+                    'User',
+                ],
+                15 => [
+                    'Default',
+                    'User',
+                ],
+                17 => [
+                    'Default',
+                    'User',
+                ],
+            ],
+            'maxMessage' => [
+                6 => 'Le nom de l\'utilsateur ne doit pas depasser 100 caractères',
+                9 => 'Le prénom  de l\'utilsateur ne doit pas depasser 100 caractères',
+            ],
+            'minMessage' => [
+                6 => 'Le nom de l\'utilisateur doit avoir au moins 3 caractères',
+                9 => 'Le prénom  de l\'utilisateur doit avoir au moins 3 caractères',
+            ],
+            'max' => [
+                6 => 100,
+                9 => 100,
+            ],
+            'min' => [
+                6 => 3,
+                9 => 3,
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

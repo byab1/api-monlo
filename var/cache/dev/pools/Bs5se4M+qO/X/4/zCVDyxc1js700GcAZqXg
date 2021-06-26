@@ -1,0 +1,31 @@
+<?php //subresource_operations_06cf21d6b3a726a1deadff4ee9d763bd
+
+return [PHP_INT_MAX, [
+    'api_users_factures_get_subresource' => [
+        'property' => 'facture',
+        'collection' => true,
+        'resource_class' => 'App\\Entity\\Facture',
+        'shortNames' => [
+            'Facture',
+            'User',
+        ],
+        'identifiers' => [
+            'id' => [
+                'App\\Entity\\User',
+                'id',
+                true,
+            ],
+        ],
+        'operation_name' => 'factures_get_subresource',
+        'route_name' => 'api_users_factures_get_subresource',
+        'path' => '/users/{id}/factures.{_format}',
+        'defaults' => [],
+        'requirements' => [],
+        'options' => [],
+        'host' => '',
+        'schemes' => [],
+        'condition' => '',
+        'controller' => null,
+        'stateless' => null,
+    ],
+]];

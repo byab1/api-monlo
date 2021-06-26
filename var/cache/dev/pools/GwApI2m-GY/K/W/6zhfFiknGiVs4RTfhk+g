@@ -1,0 +1,85 @@
+<?php //App_Entity_Package
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Symfony\\Component\\Serializer\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Serializer\\Mapping\\ClassMetadata')),
+        clone ($p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata')),
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\Package',
+                'id',
+                'nomPackage',
+                'prixPackage',
+                'dateExpiration',
+                'nbrPropriete',
+                'nbVedetProp',
+                'desProp',
+                'etat',
+                'typePackage',
+            ],
+            'attributesMetadata' => [
+                [
+                    'id' => $o[1],
+                    'nomPackage' => $o[2],
+                    'prixPackage' => $o[3],
+                    'dateExpiration' => $o[4],
+                    'nbrPropriete' => $o[5],
+                    'nbVedetProp' => $o[6],
+                    'desProp' => $o[7],
+                    'etat' => $o[8],
+                    'typePackage' => $o[9],
+                ],
+            ],
+            'groups' => [
+                1 => [
+                    'lecture_package',
+                    'lecture_typepackage',
+                ],
+                [
+                    'lecture_package',
+                    'lecture_typepackage',
+                ],
+                [
+                    'lecture_package',
+                    'lecture_typepackage',
+                ],
+                [
+                    'lecture_package',
+                    'lecture_typepackage',
+                ],
+                [
+                    'lecture_package',
+                    'lecture_typepackage',
+                ],
+                [
+                    'lecture_package',
+                    'lecture_typepackage',
+                ],
+                [
+                    'lecture_package',
+                    'lecture_typepackage',
+                ],
+                [
+                    'lecture_package',
+                    'lecture_typepackage',
+                ],
+                [
+                    'lecture_package',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

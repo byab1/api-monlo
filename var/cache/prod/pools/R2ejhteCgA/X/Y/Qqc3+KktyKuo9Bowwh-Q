@@ -1,0 +1,83 @@
+<?php //App.Entity.TypePackage
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        (($f = &\Symfony\Component\VarExporter\Internal\Registry::$factories)['Symfony\\Component\\Validator\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::f('Symfony\\Component\\Validator\\Mapping\\ClassMetadata'))(),
+        ($f['Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::f('Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'))(),
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Symfony\\Component\\Validator\\Constraints\\Choice'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Validator\\Constraints\\Choice')),
+        clone ($p['Symfony\\Component\\Validator\\Constraints\\NotBlank'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Validator\\Constraints\\NotBlank')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\TypePackage',
+                'nomTypePackage',
+            ],
+            'defaultGroup' => [
+                'TypePackage',
+            ],
+            'members' => [
+                [
+                    'nomTypePackage' => [
+                        $o[1],
+                    ],
+                ],
+            ],
+            'properties' => [
+                [
+                    'nomTypePackage' => $o[1],
+                ],
+            ],
+            'class' => [
+                1 => 'App\\Entity\\TypePackage',
+            ],
+            'property' => [
+                1 => 'nomTypePackage',
+            ],
+            'constraints' => [
+                1 => [
+                    $o[2],
+                    $o[3],
+                ],
+            ],
+            'constraintsByGroup' => [
+                1 => [
+                    'Default' => [
+                        $o[2],
+                        $o[3],
+                    ],
+                    'TypePackage' => [
+                        $o[2],
+                        $o[3],
+                    ],
+                ],
+            ],
+            'choices' => [
+                2 => [
+                    'Gratuit',
+                    'Standard',
+                    'Premium',
+                    'Business',
+                    'Sur mesure',
+                ],
+            ],
+            'message' => [
+                2 => 'Le nom du Package doit être \'Gratuit\', \'Standard\', \'Premium\', \'Business\' ou \'Sur mesure\'',
+                'Le nom du Type de package est obligatoire',
+            ],
+            'groups' => [
+                2 => [
+                    'Default',
+                    'TypePackage',
+                ],
+                [
+                    'Default',
+                    'TypePackage',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

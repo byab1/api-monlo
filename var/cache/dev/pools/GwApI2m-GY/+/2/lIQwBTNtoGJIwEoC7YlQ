@@ -1,0 +1,199 @@
+<?php //App_Entity_Propriete
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Symfony\\Component\\Serializer\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Serializer\\Mapping\\ClassMetadata')),
+        clone ($p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata')),
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\Propriete',
+                'id',
+                'nomPropriete',
+                'desPropriete',
+                'adrPropriete',
+                'localisation',
+                'ville',
+                'etat',
+                'commune',
+                'dateAjout',
+                'dateModifPropriete',
+                'superficie',
+                'statut',
+                'photoPropriete',
+                'video',
+                'tourVirtuel',
+                'walkscore',
+                'requete',
+                'vues',
+                'galeries',
+                'user',
+                'nbrPiece',
+                'salleEau',
+                'piscine',
+                'panneauSolaire',
+                'garage',
+                'type',
+                'spa',
+                'prix',
+            ],
+            'attributesMetadata' => [
+                [
+                    'id' => $o[1],
+                    'nomPropriete' => $o[2],
+                    'desPropriete' => $o[3],
+                    'adrPropriete' => $o[4],
+                    'localisation' => $o[5],
+                    'ville' => $o[6],
+                    'etat' => $o[7],
+                    'commune' => $o[8],
+                    'dateAjout' => $o[9],
+                    'dateModifPropriete' => $o[10],
+                    'superficie' => $o[11],
+                    'statut' => $o[12],
+                    'photoPropriete' => $o[13],
+                    'video' => $o[14],
+                    'tourVirtuel' => $o[15],
+                    'walkscore' => $o[16],
+                    'requete' => $o[17],
+                    'vues' => $o[18],
+                    'galeries' => $o[19],
+                    'user' => $o[20],
+                    'nbrPiece' => $o[21],
+                    'salleEau' => $o[22],
+                    'piscine' => $o[23],
+                    'panneauSolaire' => $o[24],
+                    'garage' => $o[25],
+                    'type' => $o[26],
+                    'spa' => $o[27],
+                    'prix' => $o[28],
+                ],
+            ],
+            'groups' => [
+                1 => [
+                    'lecture_propriete',
+                    'lecture_galerie',
+                    'lecture_user',
+                ],
+                [
+                    'lecture_propriete',
+                    'lecture_galerie',
+                    'lecture_user',
+                ],
+                [
+                    'lecture_propriete',
+                ],
+                [
+                    'lecture_propriete',
+                ],
+                [
+                    'lecture_propriete',
+                ],
+                [
+                    'lecture_propriete',
+                    'lecture_galerie',
+                    'lecture_user',
+                ],
+                [
+                    'lecture_propriete',
+                ],
+                [
+                    'lecture_propriete',
+                ],
+                [
+                    'lecture_propriete',
+                ],
+                [
+                    'lecture_propriete',
+                ],
+                [
+                    'lecture_propriete',
+                ],
+                [
+                    'lecture_propriete',
+                ],
+                [
+                    'lecture_propriete',
+                ],
+                [
+                    'lecture_propriete',
+                ],
+                [
+                    'lecture_propriete',
+                ],
+                [
+                    'lecture_propriete',
+                ],
+                [
+                    'lecture_propriete',
+                ],
+                [
+                    'lecture_propriete',
+                ],
+                [
+                    'lecture_propriete',
+                ],
+                [
+                    'lecture_propriete',
+                ],
+                [
+                    'lecture_propriete',
+                ],
+                [
+                    'lecture_propriete',
+                ],
+                [
+                    'lecture_propriete',
+                ],
+                [
+                    'lecture_propriete',
+                ],
+                [
+                    'lecture_propriete',
+                ],
+                [
+                    'lecture_propriete',
+                ],
+                [
+                    'lecture_propriete',
+                ],
+                [
+                    'lecture_propriete',
+                    'lecture_galerie',
+                    'lecture_user',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

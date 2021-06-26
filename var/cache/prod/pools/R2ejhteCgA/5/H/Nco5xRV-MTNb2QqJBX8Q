@@ -1,0 +1,115 @@
+<?php //App.Entity.Galerie
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        (($f = &\Symfony\Component\VarExporter\Internal\Registry::$factories)['Symfony\\Component\\Validator\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::f('Symfony\\Component\\Validator\\Mapping\\ClassMetadata'))(),
+        ($f['Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::f('Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'))(),
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Symfony\\Component\\Validator\\Constraints\\NotBlank'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Validator\\Constraints\\NotBlank')),
+        $f['Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'](),
+        clone $p['Symfony\\Component\\Validator\\Constraints\\NotBlank'],
+        $f['Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'](),
+        clone $p['Symfony\\Component\\Validator\\Constraints\\NotBlank'],
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\Galerie',
+                'url',
+                3 => 'caption',
+                5 => 'propriete',
+            ],
+            'defaultGroup' => [
+                'Galerie',
+            ],
+            'members' => [
+                [
+                    'url' => [
+                        $o[1],
+                    ],
+                    'caption' => [
+                        $o[3],
+                    ],
+                    'propriete' => [
+                        $o[5],
+                    ],
+                ],
+            ],
+            'properties' => [
+                [
+                    'url' => $o[1],
+                    'caption' => $o[3],
+                    'propriete' => $o[5],
+                ],
+            ],
+            'class' => [
+                1 => 'App\\Entity\\Galerie',
+                3 => 'App\\Entity\\Galerie',
+                5 => 'App\\Entity\\Galerie',
+            ],
+            'property' => [
+                1 => 'url',
+                3 => 'caption',
+                5 => 'propriete',
+            ],
+            'constraints' => [
+                1 => [
+                    $o[2],
+                ],
+                3 => [
+                    $o[4],
+                ],
+                5 => [
+                    $o[6],
+                ],
+            ],
+            'constraintsByGroup' => [
+                1 => [
+                    'Default' => [
+                        $o[2],
+                    ],
+                    'Galerie' => [
+                        $o[2],
+                    ],
+                ],
+                3 => [
+                    'Default' => [
+                        $o[4],
+                    ],
+                    'Galerie' => [
+                        $o[4],
+                    ],
+                ],
+                5 => [
+                    'Default' => [
+                        $o[6],
+                    ],
+                    'Galerie' => [
+                        $o[6],
+                    ],
+                ],
+            ],
+            'message' => [
+                2 => 'L\'url est obligatoire',
+                4 => 'Ce champs est obligatoire',
+                6 => 'La galerie doit etre attibuée à une proprieté',
+            ],
+            'groups' => [
+                2 => [
+                    'Default',
+                    'Galerie',
+                ],
+                4 => [
+                    'Default',
+                    'Galerie',
+                ],
+                6 => [
+                    'Default',
+                    'Galerie',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

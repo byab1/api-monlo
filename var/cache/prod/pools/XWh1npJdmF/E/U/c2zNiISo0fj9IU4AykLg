@@ -1,0 +1,54 @@
+<?php //%255BApp%255CEntity%255CTypePackage%2524nomTypePackage%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\Column'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Column')),
+        clone ($p['Symfony\\Component\\Validator\\Constraints\\Choice'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Validator\\Constraints\\Choice')),
+        clone ($p['Symfony\\Component\\Serializer\\Annotation\\Groups'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Serializer\\Annotation\\Groups')),
+        clone ($p['Symfony\\Component\\Validator\\Constraints\\NotBlank'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Validator\\Constraints\\NotBlank')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'length' => [
+                191,
+            ],
+            'choices' => [
+                1 => [
+                    'Gratuit',
+                    'Standard',
+                    'Premium',
+                    'Business',
+                    'Sur mesure',
+                ],
+            ],
+            'message' => [
+                1 => 'Le nom du Package doit être \'Gratuit\', \'Standard\', \'Premium\', \'Business\' ou \'Sur mesure\'',
+                3 => 'Le nom du Type de package est obligatoire',
+            ],
+            'groups' => [
+                1 => [
+                    'Default',
+                ],
+                3 => [
+                    'Default',
+                ],
+            ],
+        ],
+        'Symfony\\Component\\Serializer\\Annotation\\Groups' => [
+            'groups' => [
+                2 => [
+                    'lecture_typepackage',
+                    'lecture_package',
+                ],
+            ],
+        ],
+    ],
+    [
+        $o[0],
+        $o[1],
+        $o[2],
+        $o[3],
+    ],
+    []
+); }];

@@ -1,0 +1,150 @@
+<?php //App_Entity_User
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Symfony\\Component\\Serializer\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Serializer\\Mapping\\ClassMetadata')),
+        clone ($p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata')),
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\User',
+                'id',
+                'email',
+                'nom',
+                'prenom',
+                'adresse',
+                'telephone',
+                'logo',
+                'cote',
+                'accreditation',
+                'etat',
+                'dateCreation',
+                'dateModification',
+                'dateSuppression',
+                'proprietes',
+                'roles',
+                'password',
+                'facture',
+                'typePackage',
+                'totalAmount',
+                'totalUnpaidAmount',
+                'username',
+                'salt',
+            ],
+            'attributesMetadata' => [
+                [
+                    'id' => $o[1],
+                    'email' => $o[2],
+                    'nom' => $o[3],
+                    'prenom' => $o[4],
+                    'adresse' => $o[5],
+                    'telephone' => $o[6],
+                    'logo' => $o[7],
+                    'cote' => $o[8],
+                    'accreditation' => $o[9],
+                    'etat' => $o[10],
+                    'dateCreation' => $o[11],
+                    'dateModification' => $o[12],
+                    'dateSuppression' => $o[13],
+                    'proprietes' => $o[14],
+                    'roles' => $o[15],
+                    'password' => $o[16],
+                    'facture' => $o[17],
+                    'typePackage' => $o[18],
+                    'totalAmount' => $o[19],
+                    'totalUnpaidAmount' => $o[20],
+                    'username' => $o[21],
+                    'salt' => $o[22],
+                ],
+            ],
+            'groups' => [
+                1 => [
+                    'lecture_user',
+                    'lecture_propriete',
+                    'lecture_facture',
+                ],
+                [
+                    'lecture_user',
+                    'lecture_propriete',
+                    'lecture_facture',
+                ],
+                [
+                    'lecture_user',
+                    'lecture_propriete',
+                    'lecture_facture',
+                ],
+                [
+                    'lecture_user',
+                    'lecture_propriete',
+                    'lecture_facture',
+                ],
+                [
+                    'lecture_user',
+                ],
+                [
+                    'lecture_user',
+                    'lecture_propriete',
+                    'lecture_facture',
+                ],
+                [
+                    'lecture_user',
+                ],
+                [
+                    'lecture_user',
+                ],
+                [
+                    'lecture_user',
+                ],
+                [
+                    'lecture_user',
+                ],
+                [
+                    'lecture_user',
+                ],
+                [
+                    'lecture_user',
+                ],
+                [
+                    'lecture_user',
+                ],
+                [
+                    'lecture_user',
+                ],
+                17 => [
+                    'lecture_user',
+                ],
+                19 => [
+                    'lecture_user',
+                ],
+                [
+                    'lecture_user',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

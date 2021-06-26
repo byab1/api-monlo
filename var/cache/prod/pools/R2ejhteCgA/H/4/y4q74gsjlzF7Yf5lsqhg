@@ -1,0 +1,249 @@
+<?php //App.Entity.Propriete
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        (($f = &\Symfony\Component\VarExporter\Internal\Registry::$factories)['Symfony\\Component\\Validator\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::f('Symfony\\Component\\Validator\\Mapping\\ClassMetadata'))(),
+        ($f['Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::f('Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'))(),
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Symfony\\Component\\Validator\\Constraints\\NotBlank'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Validator\\Constraints\\NotBlank')),
+        $f['Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'](),
+        clone $p['Symfony\\Component\\Validator\\Constraints\\NotBlank'],
+        $f['Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'](),
+        clone $p['Symfony\\Component\\Validator\\Constraints\\NotBlank'],
+        $f['Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'](),
+        clone $p['Symfony\\Component\\Validator\\Constraints\\NotBlank'],
+        $f['Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'](),
+        clone $p['Symfony\\Component\\Validator\\Constraints\\NotBlank'],
+        clone ($p['Symfony\\Component\\Validator\\Constraints\\Choice'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Validator\\Constraints\\Choice')),
+        $f['Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'](),
+        clone $p['Symfony\\Component\\Validator\\Constraints\\NotBlank'],
+        clone $p['Symfony\\Component\\Validator\\Constraints\\Choice'],
+        $f['Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'](),
+        clone $p['Symfony\\Component\\Validator\\Constraints\\NotBlank'],
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\Propriete',
+                'nomPropriete',
+                3 => 'desPropriete',
+                5 => 'localisation',
+                7 => 'ville',
+                9 => 'statut',
+                12 => 'type',
+                15 => 'prix',
+            ],
+            'defaultGroup' => [
+                'Propriete',
+            ],
+            'members' => [
+                [
+                    'nomPropriete' => [
+                        $o[1],
+                    ],
+                    'desPropriete' => [
+                        $o[3],
+                    ],
+                    'localisation' => [
+                        $o[5],
+                    ],
+                    'ville' => [
+                        $o[7],
+                    ],
+                    'statut' => [
+                        $o[9],
+                    ],
+                    'type' => [
+                        $o[12],
+                    ],
+                    'prix' => [
+                        $o[15],
+                    ],
+                ],
+            ],
+            'properties' => [
+                [
+                    'nomPropriete' => $o[1],
+                    'desPropriete' => $o[3],
+                    'localisation' => $o[5],
+                    'ville' => $o[7],
+                    'statut' => $o[9],
+                    'type' => $o[12],
+                    'prix' => $o[15],
+                ],
+            ],
+            'class' => [
+                1 => 'App\\Entity\\Propriete',
+                3 => 'App\\Entity\\Propriete',
+                5 => 'App\\Entity\\Propriete',
+                7 => 'App\\Entity\\Propriete',
+                9 => 'App\\Entity\\Propriete',
+                12 => 'App\\Entity\\Propriete',
+                15 => 'App\\Entity\\Propriete',
+            ],
+            'property' => [
+                1 => 'nomPropriete',
+                3 => 'desPropriete',
+                5 => 'localisation',
+                7 => 'ville',
+                9 => 'statut',
+                12 => 'type',
+                15 => 'prix',
+            ],
+            'constraints' => [
+                1 => [
+                    $o[2],
+                ],
+                3 => [
+                    $o[4],
+                ],
+                5 => [
+                    $o[6],
+                ],
+                7 => [
+                    $o[8],
+                ],
+                9 => [
+                    $o[10],
+                    $o[11],
+                ],
+                12 => [
+                    $o[13],
+                    $o[14],
+                ],
+                15 => [
+                    $o[16],
+                ],
+            ],
+            'constraintsByGroup' => [
+                1 => [
+                    'Default' => [
+                        $o[2],
+                    ],
+                    'Propriete' => [
+                        $o[2],
+                    ],
+                ],
+                3 => [
+                    'Default' => [
+                        $o[4],
+                    ],
+                    'Propriete' => [
+                        $o[4],
+                    ],
+                ],
+                5 => [
+                    'Default' => [
+                        $o[6],
+                    ],
+                    'Propriete' => [
+                        $o[6],
+                    ],
+                ],
+                7 => [
+                    'Default' => [
+                        $o[8],
+                    ],
+                    'Propriete' => [
+                        $o[8],
+                    ],
+                ],
+                9 => [
+                    'Default' => [
+                        $o[10],
+                        $o[11],
+                    ],
+                    'Propriete' => [
+                        $o[10],
+                        $o[11],
+                    ],
+                ],
+                12 => [
+                    'Default' => [
+                        $o[13],
+                        $o[14],
+                    ],
+                    'Propriete' => [
+                        $o[13],
+                        $o[14],
+                    ],
+                ],
+                15 => [
+                    'Default' => [
+                        $o[16],
+                    ],
+                    'Propriete' => [
+                        $o[16],
+                    ],
+                ],
+            ],
+            'message' => [
+                2 => 'Le nom de la propriété est obligatoire',
+                4 => 'La description de la propriété est obligatoire',
+                6 => 'La localisation de la propriété est obligatoire',
+                8 => 'La ville de la propriété est obligatoire',
+                10 => 'Le statut de la propriété est obligatoire',
+                'Le statut doit être En vente ou en Location',
+                13 => 'Le type de propriété est obligatoire',
+                'Le type de propriété doit être Villa, Maison...',
+                16 => 'Le type de propriété est obligatoire',
+            ],
+            'groups' => [
+                2 => [
+                    'Default',
+                    'Propriete',
+                ],
+                4 => [
+                    'Default',
+                    'Propriete',
+                ],
+                6 => [
+                    'Default',
+                    'Propriete',
+                ],
+                8 => [
+                    'Default',
+                    'Propriete',
+                ],
+                10 => [
+                    'Default',
+                    'Propriete',
+                ],
+                [
+                    'Default',
+                    'Propriete',
+                ],
+                13 => [
+                    'Default',
+                    'Propriete',
+                ],
+                [
+                    'Default',
+                    'Propriete',
+                ],
+                16 => [
+                    'Default',
+                    'Propriete',
+                ],
+            ],
+            'choices' => [
+                11 => [
+                    'En vente',
+                    'Location',
+                ],
+                14 => [
+                    'Villa',
+                    'Appartement',
+                    'Boutique',
+                    'Maison',
+                    'Entrepot',
+                    'Ferme',
+                    'Terrain',
+                    'Lavage-auto',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];
